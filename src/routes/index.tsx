@@ -99,7 +99,7 @@ const consiglieri: Array<{ nome: string; foto: string; bio: string; fotoContain?
   {
     nome: 'Claudio Masotti',
     foto: '/claudio-masotti.jpg',
-    bio: '72 anni, radici a Cappadocia dove trascorre le sue giornate migliori. Per 40 anni dirigente d\'azienda, ha gestito relazioni commerciali a livello direzionale per multinazionali dell\'informatica — Google, Oracle, Digital, Siemens, Atos Origin — verso la Pubblica Amministrazione locale e centrale. Desidera mettere la sua esperienza a disposizione dell'amministrazione al fine di reperire le risorse che si renderanno disponibili dagli enti sovracomunali.',
+    bio: '72 anni, radici a Cappadocia dove trascorre le sue giornate migliori. Per 40 anni dirigente d\'azienda, ha gestito relazioni commerciali a livello direzionale per multinazionali dell\'informatica — Google, Oracle, Digital, Siemens, Atos Origin — verso la Pubblica Amministrazione locale e centrale. Desidera mettere la sua esperienza a disposizione dell\'amministrazione al fine di reperire le risorse che si renderanno disponibili dagli enti sovracomunali.',
   },
   {
     nome: 'Cristiano Satariano',
@@ -756,6 +756,8 @@ function Link() {
 }
 
 function ComeVotare() {
+  const [facsimileZoomed, setFacsimileZoomed] = useState(false)
+
   const passi = [
     {
       n: '1',
@@ -798,6 +800,95 @@ function ComeVotare() {
             </div>
           ))}
         </div>
+
+        {/* Facsimile della scheda */}
+        <div style={{ margin: '2rem 0', textAlign: 'center' }}>
+          <p style={{ fontFamily: 'Source Serif 4, serif', fontSize: '0.85rem', color: 'var(--text-mid)', marginBottom: '0.75rem', fontStyle: 'italic' }}>
+            Facsimile della scheda elettorale
+          </p>
+          <button
+            type="button"
+            onClick={() => setFacsimileZoomed(true)}
+            aria-label="Ingrandisci facsimile della scheda elettorale"
+            style={{
+              display: 'inline-block',
+              borderRadius: '4px',
+              overflow: 'hidden',
+              border: '1px solid rgba(196,154,46,0.35)',
+              background: '#fff',
+              padding: 0,
+              cursor: 'zoom-in',
+              boxShadow: '0 8px 24px rgba(26,58,40,0.12)',
+              position: 'relative',
+              maxWidth: '100%',
+            }}
+          >
+            <img
+              src="/facsimile.jpg"
+              alt="Facsimile della scheda elettorale per le elezioni comunali di Cappadocia 2026"
+              style={{ maxWidth: '100%', height: 'auto', display: 'block' }}
+            />
+            <span style={{ position: 'absolute', right: '0.75rem', bottom: '0.75rem', width: '2.25rem', height: '2.25rem', borderRadius: '50%', background: 'rgba(15,36,25,0.78)', color: 'var(--gold-light)', display: 'grid', placeItems: 'center' }}>
+              <ZoomIn size={18} strokeWidth={1.8} aria-hidden="true" />
+            </span>
+          </button>
+        </div>
+
+        {facsimileZoomed && (
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Facsimile della scheda elettorale ingrandito"
+            onClick={() => setFacsimileZoomed(false)}
+            style={{
+              position: 'fixed',
+              inset: 0,
+              zIndex: 80,
+              background: 'rgba(15,36,25,0.9)',
+              padding: 'clamp(1rem, 4vw, 3rem)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'zoom-out',
+            }}
+          >
+            <button
+              type="button"
+              aria-label="Chiudi immagine ingrandita"
+              onClick={() => setFacsimileZoomed(false)}
+              style={{
+                position: 'fixed',
+                top: '1rem',
+                right: '1rem',
+                width: '2.75rem',
+                height: '2.75rem',
+                borderRadius: '50%',
+                border: '1px solid rgba(232,201,106,0.5)',
+                background: 'rgba(15,36,25,0.85)',
+                color: 'var(--parchment)',
+                fontSize: '1.5rem',
+                lineHeight: 1,
+                cursor: 'pointer',
+              }}
+            >
+              <X size={22} strokeWidth={1.8} aria-hidden="true" />
+            </button>
+            <img
+              src="/facsimile.jpg"
+              alt="Facsimile della scheda elettorale per le elezioni comunali di Cappadocia 2026"
+              onClick={(event) => event.stopPropagation()}
+              style={{
+                maxWidth: 'min(100%, 980px)',
+                maxHeight: '92vh',
+                objectFit: 'contain',
+                borderRadius: '4px',
+                boxShadow: '0 30px 90px rgba(0,0,0,0.45)',
+                background: '#fff',
+                cursor: 'default',
+              }}
+            />
+          </div>
+        )}
 
         {/* Info box */}
         <div style={{ marginTop: '2.5rem', padding: '1.5rem', background: 'var(--forest)', borderRadius: '4px', display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
