@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { ExternalLink, X, ZoomIn } from 'lucide-react'
 import { useState } from 'react'
 
 export const Route = createFileRoute('/')({
@@ -132,6 +133,26 @@ const consiglieri: Array<{ nome: string; foto: string; bio: string; fotoContain?
   },
 ]
 
+const articoli = [
+  {
+    titolo: 'Tour di presentazione',
+    descrizione: 'Leggi l\'articolo sull\'avvio del tour di presentazione della lista.',
+    href: 'https://marsicalive.it/al-via-a-cappadocia-il-tour-di-presentazione-della-lista-radici-per-il-futuro/',
+  },
+  {
+    titolo: 'Bilancio degli incontri',
+    descrizione: 'Leggi il resoconto del fine settimana di incontri con Fabio De Angelis.',
+    href: 'https://marsicalive.it/fine-settimana-di-incontri-per-radici-per-il-futuro-il-bilancio-del-tour-di-fabio-de-angelis/',
+  },
+]
+
+const vignette = [
+  { src: '/vignetta-1.png', alt: 'Vignetta 1' },
+  { src: '/vignetta-2.jpg', alt: 'Vignetta 2' },
+  { src: '/vignetta-3.png', alt: 'Vignetta 3' },
+  { src: '/vignetta-4.png', alt: 'Vignetta 4' },
+]
+
 // ─── Components ──────────────────────────────────────────────────────────────
 
 function Navbar() {
@@ -142,6 +163,7 @@ function Navbar() {
     { href: '#sindaco', label: 'Sindaco' },
     { href: '#consiglieri', label: 'Consiglieri' },
     { href: '#vignette', label: 'Vignette' },
+    { href: '#link', label: 'Link' },
     { href: '#come-votare', label: 'Come si vota' },
   ]
   return (
@@ -563,6 +585,8 @@ function CandidatiConsiglieri() {
 }
 
 function Vignette() {
+  const [zoomedVignetta, setZoomedVignetta] = useState<typeof vignette[number] | null>(null)
+
   return (
     <section
       id="vignette"
@@ -586,35 +610,147 @@ function Vignette() {
         </p>
 
         {/* Vignette grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
-          {[
-            { src: '/vignetta-1.png', alt: 'Vignetta 1' },
-            { src: '/vignetta-2.jpg', alt: 'Vignetta 2' },
-            { src: '/vignetta-3.png', alt: 'Vignetta 3' },
-          ].map(v => (
-            <div
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
+          {vignette.map(v => (
+            <button
               key={v.src}
+              type="button"
+              onClick={() => setZoomedVignetta(v)}
+              aria-label={`Ingrandisci ${v.alt}`}
               style={{
                 borderRadius: '4px',
                 overflow: 'hidden',
                 border: '1px solid rgba(196,154,46,0.25)',
                 background: 'rgba(255,255,255,0.05)',
+                padding: 0,
+                cursor: 'zoom-in',
+                boxShadow: '0 16px 36px rgba(15, 36, 25, 0.2)',
+                position: 'relative',
               }}
             >
+              <span style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0, 0, 0, 0)', whiteSpace: 'nowrap', border: 0 }}>
+                Apri immagine ingrandita
+              </span>
               <img
                 src={v.src}
                 alt={v.alt}
-                style={{ width: '100%', height: 'auto', display: 'block' }}
+                style={{ width: '100%', aspectRatio: '3 / 4', height: 'auto', display: 'block', objectFit: 'contain', background: 'rgba(240,233,210,0.08)' }}
               />
-            </div>
+              <span style={{ position: 'absolute', right: '0.75rem', bottom: '0.75rem', width: '2.25rem', height: '2.25rem', borderRadius: '50%', background: 'rgba(15,36,25,0.78)', color: 'var(--gold-light)', display: 'grid', placeItems: 'center' }}>
+                <ZoomIn size={18} strokeWidth={1.8} aria-hidden="true" />
+              </span>
+            </button>
           ))}
         </div>
+
+        {zoomedVignetta && (
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label={zoomedVignetta.alt}
+            onClick={() => setZoomedVignetta(null)}
+            style={{
+              position: 'fixed',
+              inset: 0,
+              zIndex: 80,
+              background: 'rgba(15,36,25,0.9)',
+              padding: 'clamp(1rem, 4vw, 3rem)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'zoom-out',
+            }}
+          >
+            <button
+              type="button"
+              aria-label="Chiudi immagine ingrandita"
+              onClick={() => setZoomedVignetta(null)}
+              style={{
+                position: 'fixed',
+                top: '1rem',
+                right: '1rem',
+                width: '2.75rem',
+                height: '2.75rem',
+                borderRadius: '50%',
+                border: '1px solid rgba(232,201,106,0.5)',
+                background: 'rgba(15,36,25,0.85)',
+                color: 'var(--parchment)',
+                fontSize: '1.5rem',
+                lineHeight: 1,
+                cursor: 'pointer',
+              }}
+            >
+              <X size={22} strokeWidth={1.8} aria-hidden="true" />
+            </button>
+            <img
+              src={zoomedVignetta.src}
+              alt={zoomedVignetta.alt}
+              onClick={(event) => event.stopPropagation()}
+              style={{
+                maxWidth: 'min(100%, 980px)',
+                maxHeight: '92vh',
+                objectFit: 'contain',
+                borderRadius: '4px',
+                boxShadow: '0 30px 90px rgba(0,0,0,0.45)',
+                background: 'var(--cream)',
+                cursor: 'default',
+              }}
+            />
+          </div>
+        )}
 
         <p style={{ fontFamily: 'Source Serif 4, serif', fontSize: '0.85rem', color: 'rgba(240,233,210,0.45)', fontStyle: 'italic' }}>
           Le vignette della campagna elettorale di Radici per il Futuro.
         </p>
       </div>
       <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, transparent, var(--gold), transparent)' }} />
+    </section>
+  )
+}
+
+function Link() {
+  return (
+    <section id="link" style={{ background: 'var(--cream)', padding: '6rem 1.5rem' }}>
+      <div className="max-w-4xl mx-auto text-center">
+        <p style={{ fontFamily: 'Source Serif 4, serif', fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '0.75rem' }}>
+          Rassegna stampa
+        </p>
+        <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2.2rem, 5vw, 3.2rem)', fontWeight: 600, color: 'var(--forest)', marginBottom: '0.5rem', lineHeight: 1.2 }}>
+          Link
+        </h2>
+        <div className="section-divider" />
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem', marginTop: '2.5rem' }}>
+          {articoli.map((articolo) => (
+            <a
+              key={articolo.href}
+              href={articolo.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '1rem',
+                textAlign: 'left',
+                padding: '1.25rem',
+                borderRadius: '4px',
+                border: '1px solid var(--mist)',
+                background: 'var(--parchment)',
+                color: 'var(--forest)',
+                textDecoration: 'none',
+                boxShadow: '0 10px 32px rgba(26,58,40,0.08)',
+              }}
+            >
+              <span style={{ flexShrink: 0, width: '2.75rem', height: '2.75rem', borderRadius: '50%', background: 'var(--forest)', color: 'var(--gold-light)', display: 'grid', placeItems: 'center' }}>
+                <ExternalLink size={21} strokeWidth={1.8} aria-hidden="true" />
+              </span>
+              <span>
+                <strong style={{ display: 'block', fontFamily: 'Cormorant Garamond, serif', fontSize: '1.25rem', lineHeight: 1.2 }}>{articolo.titolo}</strong>
+                <span style={{ display: 'block', marginTop: '0.35rem', fontFamily: 'Source Serif 4, serif', fontSize: '0.9rem', lineHeight: 1.5, color: 'var(--text-mid)' }}>{articolo.descrizione}</span>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
     </section>
   )
 }
@@ -744,6 +880,7 @@ function HomePage() {
         <CandidatoSindaco />
         <CandidatiConsiglieri />
         <Vignette />
+        <Link />
         <ComeVotare />
       </main>
       <Footer />
