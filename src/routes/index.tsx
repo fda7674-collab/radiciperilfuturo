@@ -475,13 +475,16 @@ function CandidatoSindaco() {
             <div className="section-divider-left" style={{ marginTop: '0' }} />
             <div style={{ fontFamily: 'Source Serif 4, serif', fontSize: '1.05rem', lineHeight: 1.85, color: 'var(--text-mid)' }} className="space-y-4">
               <p>
-                Fabio De Angelis si presenta alla guida della lista <strong style={{ color: 'var(--forest)' }}>"Radici per il Futuro"</strong> con un progetto chiaro per il Comune di Cappadocia: un'amministrazione trasparente, partecipativa e concreta che sappia valorizzare le risorse del territorio e rispondere alle esigenze reali dei suoi abitanti.
+                Fabio De Angelis, 50 anni, nato ad Avezzano e coniugato a Petrella Liri.
               </p>
               <p>
-                Il suo programma si articola attorno a sette assi d'intervento — dall'efficienza amministrativa alla sicurezza del territorio, dalla valorizzazione del patrimonio comunale allo sviluppo del turismo in tutte le sue frazioni — con un occhio sempre rivolto alla qualità della vita dei residenti stabili e al contrasto allo spopolamento.
+                Ingegnere libero professionista ed ufficiale con grado di capitano ruolo tecnico dell’Arma dei Carabinieri (attualmente in congedo).
               </p>
               <p>
-                La sua visione è quella di un Comune capace di tenere insieme <strong style={{ color: 'var(--forest)' }}>Cappadocia, Petrella Liri, Verrecchie e Camporotondo</strong> come un unico corpo, valorizzando ciascuna realtà con un ruolo specifico nello sviluppo del territorio, senza lasciare indietro nessuno.
+                 Ha esperienza nella gestione di progetti di opere pubbliche e infrastrutture strategiche, maturata in ambito militare, istituzionale e civile sia in Italia presso il Comando Generale dell’Arma dei Carabinieri, Direzione Lavori del Genio, sia all’estero (Giordania ed Israele) in collaborazione col Ministero dei Beni Culturali.
+              </p>
+              <p>
+                Si presenta alla guida della lista <strong style={{ color: 'var(--forest)' }}>"Radici per il Futuro"</strong> con un progetto chiaro e preciso per il Comune di Cappadocia: valorizzare il territorio.
               </p>
             </div>
 
