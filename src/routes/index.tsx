@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 export const Route = createFileRoute('/')({
   component: HomePage,
@@ -143,6 +143,7 @@ function Navbar() {
     { href: '#consiglieri', label: 'Consiglieri' },
     { href: '#vignette', label: 'Vignette' },
     { href: '#come-votare', label: 'Come si vota' },
+    { href: '#link', label: 'Link' },
   ]
   return (
     <nav
@@ -560,6 +561,27 @@ function CandidatiConsiglieri() {
 }
 
 function Vignette() {
+  const [zoomedSrc, setZoomedSrc] = useState<string | null>(null)
+
+  const closeZoom = useCallback(() => setZoomedSrc(null), [])
+
+  useEffect(() => {
+    if (!zoomedSrc) return
+    const handleKey = (e: KeyboardEvent) => { if (e.key === 'Escape') closeZoom() }
+    document.addEventListener('keydown', handleKey)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', handleKey)
+      document.body.style.overflow = ''
+    }
+  }, [zoomedSrc, closeZoom])
+
+  const vignette = [
+    { src: '/vignetta-1.png', alt: 'Vignetta 1' },
+    { src: '/vignetta-2.jpg', alt: 'Vignetta 2' },
+    { src: '/vignetta-3.png', alt: 'Vignetta 3' },
+  ]
+
   return (
     <section
       id="vignette"
@@ -584,24 +606,24 @@ function Vignette() {
 
         {/* Vignette grid */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
-          {[
-            { src: '/vignetta-1.png', alt: 'Vignetta 1' },
-            { src: '/vignetta-2.jpg', alt: 'Vignetta 2' },
-            { src: '/vignetta-3.png', alt: 'Vignetta 3' },
-          ].map(v => (
+          {vignette.map(v => (
             <div
               key={v.src}
+              className="vignetta-card"
               style={{
                 borderRadius: '4px',
                 overflow: 'hidden',
                 border: '1px solid rgba(196,154,46,0.25)',
                 background: 'rgba(255,255,255,0.05)',
+                cursor: 'pointer',
+                aspectRatio: '4 / 3',
               }}
+              onClick={() => setZoomedSrc(v.src)}
             >
               <img
                 src={v.src}
                 alt={v.alt}
-                style={{ width: '100%', height: 'auto', display: 'block' }}
+                style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block', background: 'rgba(255,255,255,0.03)' }}
               />
             </div>
           ))}
@@ -612,6 +634,102 @@ function Vignette() {
         </p>
       </div>
       <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(90deg, transparent, var(--gold), transparent)' }} />
+
+      {/* Lightbox */}
+      {zoomedSrc && (
+        <div
+          className="lightbox-overlay"
+          onClick={closeZoom}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 100,
+            background: 'rgba(0,0,0,0.9)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '2rem',
+            cursor: 'zoom-out',
+          }}
+        >
+          <button
+            onClick={closeZoom}
+            aria-label="Chiudi"
+            style={{
+              position: 'absolute',
+              top: '1.5rem',
+              right: '1.5rem',
+              background: 'none',
+              border: 'none',
+              color: '#fff',
+              fontSize: '2rem',
+              cursor: 'pointer',
+              lineHeight: 1,
+              padding: '0.5rem',
+            }}
+          >
+            &times;
+          </button>
+          <img
+            src={zoomedSrc}
+            alt="Vignetta ingrandita"
+            style={{ maxWidth: '100%', maxHeight: '90vh', objectFit: 'contain', borderRadius: '4px' }}
+          />
+        </div>
+      )}
+    </section>
+  )
+}
+
+function LinkEsterni() {
+  const articoli = [
+    {
+      url: 'https://marsicalive.it/al-via-a-cappadocia-il-tour-di-presentazione-della-lista-radici-per-il-futuro/',
+      titolo: 'Il tour di presentazione della lista',
+    },
+    {
+      url: 'https://marsicalive.it/fine-settimana-di-incontri-per-radici-per-il-futuro-il-bilancio-del-tour-di-fabio-de-angelis/',
+      titolo: 'Il bilancio del tour elettorale',
+    },
+  ]
+
+  return (
+    <section id="link" style={{ background: 'var(--cream)', padding: '6rem 1.5rem' }}>
+      <div className="max-w-3xl mx-auto text-center">
+        <p style={{ fontFamily: 'Source Serif 4, serif', fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '0.75rem' }}>
+          Rassegna stampa
+        </p>
+        <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2.2rem, 5vw, 3.2rem)', fontWeight: 600, color: 'var(--forest)', marginBottom: '0.5rem', lineHeight: 1.2 }}>
+          Link
+        </h2>
+        <div className="section-divider" />
+        <p style={{ fontFamily: 'Source Serif 4, serif', fontSize: '1rem', color: 'var(--text-mid)', maxWidth: '500px', margin: '0 auto 2.5rem', lineHeight: 1.7 }}>
+          Articoli e approfondimenti sulla campagna elettorale di Radici per il Futuro.
+        </p>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', alignItems: 'center' }}>
+          {articoli.map(a => (
+            <a
+              key={a.url}
+              href={a.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-esterno-btn"
+            >
+              {/* Newspaper icon */}
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <path d="M4 22h16a2 2 0 002-2V4a2 2 0 00-2-2H8a2 2 0 00-2 2v16a2 2 0 01-2 2zm0 0a2 2 0 01-2-2v-9c0-1.1.9-2 2-2h2" />
+                <path d="M18 14h-8M15 18h-5M10 6h8v4h-8z" />
+              </svg>
+              <span>{a.titolo}</span>
+              {/* External link arrow */}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, opacity: 0.5 }}>
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+              </svg>
+            </a>
+          ))}
+        </div>
+      </div>
     </section>
   )
 }
@@ -742,6 +860,7 @@ function HomePage() {
         <CandidatiConsiglieri />
         <Vignette />
         <ComeVotare />
+        <LinkEsterni />
       </main>
       <Footer />
     </>
