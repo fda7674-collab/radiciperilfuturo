@@ -83,53 +83,53 @@ const consiglieri: Array<{ nome: string; foto: string; bio: string; fotoContain?
   {
     nome: 'Alessandro Tamilia',
     foto: '/alessandro-tamilia.jpg',
-    bio: 'Ex funzionario di banca e libero professionista per oltre 40 anni, oggi pensionato con la voglia di restituire alla propria comunità ciò che ha ricevuto. Conosce bene le problematiche del territorio e vuole migliorare l\'accoglienza turistica, agevolare la vita degli anziani e integrare i servizi essenziali.',
+    bio: '70 anni, vive a Verrecchie. Ex funzionario di banca e libero professionista per oltre 40 anni, oggi pensionato con la voglia di restituire alla propria comunità ciò che ha ricevuto. Conosce bene le problematiche del territorio e vuole migliorare l\'accoglienza turistica, agevolare la vita degli anziani e integrare i servizi essenziali.',
   },
   {
     nome: 'Benedetto Pensa',
     foto: '/benedetto-pensa.jpg',
     fotoContain: true,
-    bio: '67 anni, nato e cresciuto a Petrella Liri. Per 40 anni in ANAS come sorvegliante, occupandosi di sicurezza stradale, sgombero neve e dissesto idrogeologico, con contatti diretti con sindaci, carabinieri, forestali e vigili del fuoco. Crede in una politica fatta di ascolto e azioni concrete.',
+    bio: '67 anni, vive a Petrella Liri dove è nato. Per 40 anni in ANAS come sorvegliante, si è occupato di sicurezza stradale, sgombero neve e dissesto idrogeologico, interfacciandosi con sindaci, carabinieri, guardie forestali e vigili del fuoco. Crede in una politica fatta di ascolto e azioni concrete.',
   },
   {
     nome: 'Calisto Luca Rossi',
     foto: '/calisto-luca-rossi.jpg',
-    bio: 'Candidato consigliere con profondo legame al territorio di Cappadocia. Porta avanti i valori fondanti della lista: radici, comunità e visione per il futuro del Comune.',
+    bio: '57 anni, vive a Cappadocia luogo in cui è nato. Ha un profondo legame con il suo paese dove si occupa di gestione e compravendita di immobili da oltre 30 anni. Crede e sostiene il progetto "Radici per il futuro" per il rilancio turistico, la cura e la salvaguardia del territorio. Ambisce a far conoscere il Comune a livello nazionale ed europeo.',
   },
   {
     nome: 'Claudio Masotti',
     foto: '/claudio-masotti.jpg',
-    bio: '72 anni di esperienza e radici profonde a Cappadocia. Per 40 anni dirigente d\'azienda, ha gestito relazioni commerciali a livello direzionale per multinazionali dell\'informatica — Google, Oracle, Digital, Siemens, Atos Origin — verso la Pubblica Amministrazione locale e centrale. Competenze preziose per accedere alle risorse regionali, nazionali ed europee.',
+    bio: '72 anni, radici a Cappadocia dove trascorre le sue giornate migliori. Per 40 anni dirigente d\'azienda, ha gestito relazioni commerciali a livello direzionale per multinazionali dell\'informatica — Google, Oracle, Digital, Siemens, Atos Origin — verso la Pubblica Amministrazione locale e centrale. Desidera mettere la sua esperienza a disposizione dell'amministrazione al fine di reperire le risorse che si renderanno disponibili dagli enti sovracomunali.',
   },
   {
     nome: 'Cristiano Satariano',
     foto: '/cristiano-satariano.jpg',
-    bio: 'Architetto dal 1992, fondatore dello studio ANOTHER LINE a Roma. Ha dedicato la propria carriera al dialogo con la Pubblica Amministrazione per lo sviluppo sostenibile del territorio. Si candida per mettere al servizio della comunità vent\'anni di legame profondo con Cappadocia e combattere lo spopolamento.',
+    bio: '59 anni, legato a Verrecchie da più di 20 anni. Architetto, fondatore dello studio ANOTHER LINE a Roma. Ha dedicato la propria carriera al dialogo con la Pubblica Amministrazione per lo sviluppo sostenibile del territorio. Si candida per mettersi al servizio della comunità di Cappadocia e combattere lo spopolamento.',
   },
   {
     nome: 'Cristina Calcagni',
     foto: '/cristina-calcagni.jpg',
-    bio: 'Classe 1966, radici a Cappadocia da quattro generazioni. 15 anni in una multinazionale americana per l\'outsourcing IT nella PA (Ministero del Tesoro, Agricoltura, Pubblica Istruzione). Ex assessore a Orvieto, vicepresidente del Centro Pari Opportunità della Regione Umbria. Un\'esperienza istituzionale ampia messa al servizio del territorio.',
+    bio: '60 anni, radici a Cappadocia da quattro generazioni. Ha lavorato 15 anni in una multinazionale americana per l\'outsourcing IT nella PA (Ministero del Tesoro, Agricoltura, Pubblica Istruzione). Ex assessore del Comune di Orvieto, attualmente vicepresidente del Centro Pari Opportunità della Regione Umbria. Un\'esperienza istituzionale ampia messa al servizio del territorio.',
   },
   {
     nome: 'Gaetano Santarelli',
     foto: '/gaetano-santarelli.jpg',
-    bio: 'Medico Veterinario, marito e padre. I suoi antenati erano i Sarti del Colle di Cappadocia, figure che hanno vestito per generazioni la popolazione del territorio. Porta con sé la storia di questo luogo e il desiderio di restituirgli l\'antico prestigio.',
+    bio: '56 anni, medico veterinario, marito e padre. I suoi antenati erano i Sarti di Cappadocia, figure che hanno vestito per generazioni la popolazione del territorio. Porta con sé la storia di questo luogo e il desiderio di restituirgli l\'antico prestigio.',
   },
   {
     nome: 'Giuseppe Di Giacomo',
     foto: '/giuseppe-di-giacomo.jpg',
-    bio: 'Nato e cresciuto a Verrecchie, da oltre 20 anni lavora a Roma nel trasporto pubblico. Ex vicesindaco con assessorato allo sport e al sociale, conosce le esigenze di tutti i paesi del Comune. Promotore della cicloturistica e della GranSimbruini, crede nel turismo sportivo e naturalistico come motore di sviluppo.',
+    bio: '45 anni, nato e cresciuto a Verrecchie e sposato a Petrella Liri. Da oltre 20 anni lavora nel trasporto pubblico. Vicesindaco del Comune di Cappadocia dal 2020, con assessorato allo sport e al sociale. Conosce le esigenze di tutto il territorio comunale. Promotore di eventi sportivi come la Cicloturistica della Faggeta e la Gran Simbruini. Crede nel turismo sportivo e naturalistico come motore di sviluppo.',
   },
   {
     nome: 'Pamela Di Croce',
     foto: '/pamela-di-croce.jpg',
-    bio: '40 anni, educatrice da 10 anni nella scuola dell\'infanzia. Persona seria, responsabile e legata al territorio. Si candida per una politica vicina alle persone, capace di ascoltare le esigenze di tutti e trasformarle in azioni reali. Vuole investire nella sicurezza, nella valorizzazione degli spazi pubblici e nella preservazione delle bellezze naturalistiche e montane.',
+    bio: '40 anni, originaria di Verrecchie. Insegnante da 10 anni nella scuola dell\'infanzia. Persona seria, responsabile e legata al territorio. Si candida per una politica vicina alle persone, capace di ascoltare le esigenze di tutti e trasformarle in azioni reali. Vuole investire nella sicurezza, nella valorizzazione degli spazi pubblici e nella preservazione delle bellezze naturalistiche e montane.',
   },
   {
     nome: 'Veronica Pellegrini',
     foto: '/veronica-pellegrini.jpg',
-    bio: 'Nata a Roma nel 1977, insegnante di arti applicate, diplomata al liceo artistico e all\'Accademia delle Belle Arti di Roma. Presidente dell\'associazione culturale Antichi Mestieri, attiva nel rinnovamento del territorio di Camporotondo. Con la sua esperienza associativa e culturale, vuole fare di più per la comunità sostenendo iniziative di aggregazione e valorizzazione del territorio.',
+    bio: '49 anni, turista residenziale di Camporotondo. Insegnante di arti applicate, diplomata al liceo artistico e all\'Accademia delle Belle Arti di Roma. Presidente dell\'associazione culturale Antichi Mestieri, attiva nel rinnovamento del territorio di Camporotondo. Con la sua esperienza associativa e culturale, vuole fare di più per la comunità sostenendo iniziative di aggregazione e valorizzazione del territorio.',
   },
 ]
 
@@ -378,7 +378,7 @@ function Visione() {
             Il territorio di Cappadocia è articolato: <strong style={{ color: 'var(--text-dark)' }}>Cappadocia, Petrella Liri, Verrecchie e Camporotondo</strong> non vanno viste come entità separate, ma come un unico corpo. Vogliamo un Comune capace di garantire il benessere di chi ci vive, chi ci lavora e chi ha voglia di villeggiarci.
           </p>
           <p>
-            Crediamo nella partecipazione attiva. Punteremo sul dialogo continuo con i residenti, sulla cooperazione con i Comuni vicini e chiederemo con forza il sostegno della Regione per dare risposte concrete alle esigenze locali. Il futuro del nostro Comune non dipende solo dall'amministrazione — dipende dalla cura che ognuno di noi dedica ogni giorno al proprio territorio.
+            Crediamo nella partecipazione attiva. Punteremo sul dialogo continuo con i residenti, sulla cooperazione con i Comuni vicini e chiederemo con forza il sostegno della Regione per dare risposte concrete alle esigenze locali. Il futuro del nostro Comune non dipende solo dalle decisioni di chi lo amministra, ma dalla cura che ognuno di noi dedica ogni giorno al proprio territorio.
           </p>
         </div>
 
@@ -497,7 +497,7 @@ function CandidatoSindaco() {
             <div className="section-divider-left" style={{ marginTop: '0' }} />
             <div style={{ fontFamily: 'Source Serif 4, serif', fontSize: '1.05rem', lineHeight: 1.85, color: 'var(--text-mid)' }} className="space-y-4">
               <p>
-                Fabio De Angelis, 50 anni, nato ad Avezzano e coniugato a Petrella Liri.
+                Fabio De Angelis, 50 anni, nato ad Avezzano e sposato a Petrella Liri.
               </p>
               <p>
                 Ingegnere libero professionista ed ufficiale con grado di capitano ruolo tecnico dell’Arma dei Carabinieri (attualmente in congedo).
@@ -764,18 +764,8 @@ function ComeVotare() {
     },
     {
       n: '2',
-      titolo: 'Vota la lista',
-      testo: 'Traccia un segno sul simbolo della lista "Radici per il Futuro". In questo modo esprimi il tuo voto sia per il candidato sindaco Fabio De Angelis sia per la lista.',
-    },
-    {
-      n: '3',
-      titolo: 'Esprimi la tua preferenza (facoltativa)',
-      testo: 'Nei comuni fino a 15.000 abitanti puoi scrivere il cognome (o nome e cognome) di uno dei candidati consiglieri nell\'apposito spazio. La preferenza è facoltativa ma preziosa.',
-    },
-    {
-      n: '4',
-      titolo: 'Consegna la scheda e vota',
-      testo: 'Piega la scheda come indicato, inseriscila nell\'urna e il giudice di gara timbrerà la tua tessera elettorale. Hai votato — grazie per aver partecipato.',
+      titolo: 'Vota la lista ed esprimi la tua preferenza',
+      testo: 'Barra con una X il simbolo della lista "Radici per il Futuro" e scrivi il cognome di uno dei candidati consiglieri nell\'apposito spazio.',
     },
   ]
 
