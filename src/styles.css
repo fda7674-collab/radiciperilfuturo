@@ -29,6 +29,13 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: var(--cream);
   color: var(--text-dark);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 h1, h2, h3, h4 {
@@ -196,5 +203,8 @@ code {
 @media (max-width: 768px) {
   .hero-title { font-size: 3.5rem !important; }
   .hero-subtitle { font-size: 1.5rem !important; }
+  .grid-responsive {
+    grid-template-columns: 1fr !important;
+  }
 }
 
