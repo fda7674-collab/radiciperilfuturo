@@ -899,7 +899,7 @@ function ComeVotare() {
           </svg>
           <div>
             <p style={{ fontFamily: 'Source Serif 4, serif', fontSize: '0.9rem', color: 'rgba(240,233,210,0.85)', margin: 0, lineHeight: 1.7 }}>
-              <strong style={{ color: 'var(--gold-light)' }}>Orari dei seggi:</strong> sabato 24 maggio 7:00–23:00, domenica 25 maggio 7:00–15:00. Porta con te un documento d'identità valido e la tessera elettorale.
+              <strong style={{ color: 'var(--gold-light)' }}>Orari dei seggi:</strong> domenica 24 maggio 7:00–23:00, lunedì 25 maggio 7:00–15:00. Porta con te un documento d'identità valido e la tessera elettorale.
             </p>
           </div>
         </div>
