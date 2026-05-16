@@ -129,7 +129,7 @@ const consiglieri: Array<{ nome: string; foto: string; bio: string; fotoContain?
   {
     nome: 'Veronica Pellegrini',
     foto: '/veronica-pellegrini.jpg',
-    bio: '49 anni, turista residenziale di Camporotondo. Insegnante di arti applicate, diplomata al liceo artistico e all\'Accademia delle Belle Arti di Roma. Presidente dell\'associazione culturale Antichi Mestieri, attiva nel rinnovamento del territorio di Camporotondo. Con la sua esperienza associativa e culturale, vuole fare di più per la comunità sostenendo iniziative di aggregazione e valorizzazione del territorio.',
+    bio: '49 anni, Presidente dell\'associazione culturale Antichi Mestieri, attiva nel rinnovamento del territorio di Camporotondo. Insegnante di arti applicate, diplomata al liceo artistico e all\'Accademia delle Belle Arti di Roma. Con la sua esperienza associativa e culturale, vuole fare di più per la comunità sostenendo iniziative di aggregazione e valorizzazione del territorio.',
   },
 ]
 
