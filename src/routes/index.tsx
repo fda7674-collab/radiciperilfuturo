@@ -408,7 +408,7 @@ function AccordionItem({ sezione }: { sezione: typeof programmaSezioni[0] }) {
       </button>
       <div
         className={`accordion-content ${open ? 'open' : ''}`}
-        style={{ maxHeight: open ? '600px' : '0' }}
+        style={{ maxHeight: open ? '2000px' : '0' }}
       >
         <ul style={{ paddingBottom: '1.5rem', margin: 0, paddingLeft: 0, listStyle: 'none' }} className="space-y-3">
           {sezione.punti.map((p, i) => (
@@ -476,7 +476,7 @@ function CandidatoSindaco() {
               <img
                 src="/fabio-de-angelis.jpg"
                 alt="Fabio De Angelis — Candidato Sindaco"
-                style={{ width: '100%', height: '380px', objectFit: 'cover', objectPosition: 'top' }}
+                style={{ width: '100%', aspectRatio: '3 / 4', objectFit: 'cover', objectPosition: 'top' }}
               />
               <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'linear-gradient(to top, rgba(15,36,25,0.7), transparent)', padding: '1.5rem 1rem 0.75rem' }}>
                 <span style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.1rem', color: '#fff', fontWeight: 500 }}>Fabio De Angelis</span>
@@ -551,6 +551,7 @@ function CandidatiConsiglieri() {
         </div>
 
         <div
+          className="grid-responsive"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
@@ -559,7 +560,7 @@ function CandidatiConsiglieri() {
         >
           {consiglieri.map((c) => (
             <article key={c.nome} className="candidate-card" style={{ borderRadius: '4px', overflow: 'hidden' }}>
-              <div style={{ position: 'relative', height: '280px', overflow: 'hidden', background: 'var(--mist)' }}>
+              <div style={{ position: 'relative', aspectRatio: '3 / 4', overflow: 'hidden', background: 'var(--mist)' }}>
                 <img
                   src={c.foto}
                   alt={c.nome}
@@ -610,7 +611,7 @@ function Vignette() {
         </p>
 
         {/* Vignette grid */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
+        <div className="grid-responsive" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem', marginBottom: '2rem' }}>
           {vignette.map(v => (
             <button
               key={v.src}
@@ -719,7 +720,7 @@ function Link() {
           Link
         </h2>
         <div className="section-divider" />
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem', marginTop: '2.5rem' }}>
+        <div className="grid-responsive" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem', marginTop: '2.5rem' }}>
           {articoli.map((articolo) => (
             <a
               key={articolo.href}
@@ -929,7 +930,7 @@ function Footer() {
             "Le radici ci danno la forza di volare."
           </p>
         </div>
-        <div style={{ textAlign: 'right' }}>
+        <div className="text-center md:text-right">
           <p style={{ fontFamily: 'Source Serif 4, serif', fontSize: '0.75rem', color: 'rgba(240,233,210,0.4)', margin: 0 }}>
             Candidato Sindaco
           </p>
