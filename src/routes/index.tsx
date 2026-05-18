@@ -546,7 +546,7 @@ function CandidatiConsiglieri() {
           </h2>
           <div className="section-divider" />
           <p style={{ fontFamily: 'Source Serif 4, serif', fontSize: '1rem', color: 'var(--text-mid)', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
-            Dieci candidati con esperienze diverse, unite da un legame autentico con il territorio di Cappadocia.
+            Dieci candidati con esperienze diverse, uniti da un legame autentico con il territorio di Cappadocia.
           </p>
         </div>
 
