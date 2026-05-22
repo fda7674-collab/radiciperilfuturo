@@ -375,7 +375,7 @@ function Visione() {
             Come simbolo della nostra lista abbiamo scelto le radici di un albero di faggio che affondano nelle montagne innevate, sorvolate da un grifone. È un simbolo che racconta chi siamo: <strong style={{ color: 'var(--text-dark)' }}>metodo nella gestione, concretezza nel compimento delle opere, responsabilità verso ogni singolo abitante</strong>.
           </p>
           <p>
-            Il territorio di Cappadocia è articolato: <strong style={{ color: 'var(--text-dark)' }}>Cappadocia, Petrella Liri, Verrecchie e Camporotondo</strong> non vanno viste come entità separate, ma come un unico corpo. Vogliamo un Comune capace di garantire il benessere di chi ci vive, chi ci lavora e chi ha voglia di villeggiarci.
+            Il territorio di Cappadocia è articolato con più centri abitati che assolvono a funzioni diverse e una forte variabilità delle presenze nel corso dell’anno. <strong style={{ color: 'var(--text-dark)' }}>Cappadocia, Petrella Liri, Verrecchie e Camporotondo</strong> non vanno viste come entità separate, ma come un unico corpo. Vogliamo un Comune capace di garantire il benessere di chi ci vive, chi ci lavora e chi ha voglia di villeggiarci.
           </p>
           <p>
             Crediamo nella partecipazione attiva. Punteremo sul dialogo continuo con i residenti, sulla cooperazione con i Comuni vicini e chiederemo con forza il sostegno della Regione per dare risposte concrete alle esigenze locali. Il futuro del nostro Comune non dipende solo dalle decisioni di chi lo amministra, ma dalla cura che ognuno di noi dedica ogni giorno al proprio territorio.
