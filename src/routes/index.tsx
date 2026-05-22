@@ -163,6 +163,7 @@ function Navbar() {
     { href: '#sindaco', label: 'Sindaco' },
     { href: '#consiglieri', label: 'Consiglieri' },
     { href: '#vignette', label: 'Vignette' },
+    { href: '#video', label: 'Video' },
     { href: '#link', label: 'Link' },
     { href: '#come-votare', label: 'Come si vota' },
   ]
@@ -709,6 +710,36 @@ function Vignette() {
   )
 }
 
+function Video() {
+  return (
+    <section id="video" style={{ background: 'var(--cream)', padding: '6rem 1.5rem' }}>
+      <div className="max-w-4xl mx-auto text-center">
+        <p style={{ fontFamily: 'Source Serif 4, serif', fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: '0.75rem' }}>
+          Campagna elettorale
+        </p>
+        <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2.2rem, 5vw, 3.2rem)', fontWeight: 600, color: 'var(--forest)', marginBottom: '0.5rem', lineHeight: 1.2 }}>
+          Video
+        </h2>
+        <div className="section-divider" />
+        <p style={{ fontFamily: 'Source Serif 4, serif', fontSize: '1rem', color: 'var(--text-mid)', marginBottom: '2.5rem', lineHeight: 1.7, maxWidth: '600px', margin: '0 auto 2.5rem' }}>
+          Fai crescere Cappadocia: vota la lista Radici per il Futuro — Fabio De Angelis Sindaco
+        </p>
+        <div style={{ borderRadius: '4px', overflow: 'hidden', boxShadow: '0 20px 60px rgba(26,58,40,0.15)', border: '1px solid var(--mist)', background: '#000' }}>
+          <video
+            controls
+            preload="metadata"
+            playsInline
+            style={{ width: '100%', display: 'block' }}
+          >
+            <source src="/video-campagna.mp4" type="video/mp4" />
+            Il tuo browser non supporta il tag video.
+          </video>
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function Link() {
   return (
     <section id="link" style={{ background: 'var(--cream)', padding: '6rem 1.5rem' }}>
@@ -962,6 +993,7 @@ function HomePage() {
         <CandidatoSindaco />
         <CandidatiConsiglieri />
         <Vignette />
+        <Video />
         <Link />
         <ComeVotare />
       </main>
